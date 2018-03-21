@@ -14,12 +14,6 @@ import re
 
 
 class UserInfo:
-    _first_name = ''
-    _last_name = ''
-    _zip_code = 0
-    _employee_id = ''
-    _is_validation_error = False
-
     # set user information
     # setting process will be done automatically in constructor
     def __init__(self):
@@ -27,6 +21,7 @@ class UserInfo:
         self._last_name = input('Enter the last name: ')
         self._zip_code = input('Enter the ZIP code: ')
         self._employee_id = input('Enter an employee ID: ')
+        self._is_validation_error = False
 
     # validate user information
     # validation process will be done by method call
