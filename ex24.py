@@ -12,7 +12,7 @@ ex24.py
 
 
 # Although example recommends function name as isAnagram,
-# I decide function's name as is_anagram because of consistency
+# NOTE : rename "isAnagram" to "is_anagram" for consistency
 def is_anagram(str1, str2):
     if len(str1) != len(str2):
         return False
