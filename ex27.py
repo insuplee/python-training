@@ -76,6 +76,12 @@ class UserInfo:
             self._is_validation_error = True
 
 
-if __name__ == '__main__':
+def main():
+    # input : construct object from class
     user = UserInfo()
+
+    # process & output
     user.validate_input()
+
+if __name__ == '__main__':
+    main()
