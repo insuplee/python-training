@@ -26,4 +26,4 @@ if __name__ == '__main__':
         except ZeroDivisionError:
             print('Sorry. Zero is not a valid input. ')
         except:
-            print('Sorry. That\'s not a valid input. ') 
+            print('Sorry. That\'s not a valid input. ')
