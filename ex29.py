@@ -14,16 +14,17 @@ ex29.py
 import math
 
 
-if __name__ == '__main__':
-    years = 0
-
+def main():
     while True:
         try:
             r = int(input('What is the rate of return? '))
-            years = math.ceil(72/r)
+            years = math.ceil(72 / r)
             print('It will take {} years to double your initial investment. '.format(years))
             break
         except ZeroDivisionError:
-            print('Sorry. Zero is not a valid input. ')
-        except:
+            print('Sorry. Rate 0 causes ZeroDivision error. ')
+        except ValueError:
             print('Sorry. That\'s not a valid input. ')
+
+if __name__ == '__main__':
+    main()
