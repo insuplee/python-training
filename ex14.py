@@ -25,8 +25,13 @@ def calculate_tax(order_amount, state):
     print("The total is ${:.2f}".format(total))
 
 
-if __name__ == '__main__':
-    input_order_amount = float(input('What is the order amount? '))
-    input_state = input('What is the state? ')
+def main():
+    # input
+    order_amount = float(input('What is the order amount? '))
+    state = input('What is the state? ')
 
-    calculate_tax(input_order_amount, input_state)
+    # process & output
+    calculate_tax(order_amount, state)
+
+if __name__ == '__main__':
+    main()
