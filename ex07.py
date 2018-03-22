@@ -31,19 +31,21 @@ def calculate_meters_area(length_ft, width_ft):
     return meters_area
 
 
-# print areas by feet and meters
-def print_area(feet_area, meters_area):
+def main():
+    # input
+    length_ft = int(input('What is the length of the room in feet? '))
+    width_ft = int(input('What is the width of the room in feet? '))
+
+    print('You entered dimensions of {0} feet by {1} feet'.format(length_ft, width_ft))
+
+    # process
+    feet_area = calculate_feet_area(length_ft, width_ft)
+    meters_area = calculate_meters_area(length_ft, width_ft)
+
+    # output
     print('The area is')
     print('{} square feet'.format(feet_area))
     print('{:.3f} square meters'.format(meters_area))
 
-
 if __name__ == '__main__':
-    input_length_ft = int(input('What is the length of the room in feet? '))
-    input_width_ft = int(input('What is the width of the room in feet? '))
-    print('You entered dimensions of {0} feet by {1} feet'.format(input_length_ft, input_width_ft))
-
-    output_feet_area = calculate_feet_area(input_length_ft, input_width_ft)
-    output_meters_area = calculate_meters_area(input_length_ft, input_width_ft)
-
-    print_area(output_feet_area, output_meters_area)
+    main()
