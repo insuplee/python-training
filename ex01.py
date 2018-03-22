@@ -15,6 +15,13 @@ def print_name(name):
     print('Hello, {0}, nice to meet you!'.format(name))
 
 
+def main():
+    # input
+    name = input('What is your name? ')
+
+    # output
+    print_name(name)
+
+
 if __name__ == '__main__':
-    input_name = input('What is your name? ')
-    print_name(input_name)
+    main() 
