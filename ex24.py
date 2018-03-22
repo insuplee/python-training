@@ -11,7 +11,6 @@ ex24.py
 """
 
 
-# Although example recommends function name as isAnagram,
 # NOTE : rename "isAnagram" to "is_anagram" for consistency
 def is_anagram(str1, str2):
     if len(str1) != len(str2):
@@ -29,12 +28,17 @@ def is_anagram(str1, str2):
     return True
 
 
-if __name__ == '__main__':
+def main():
+    # input
     print('Enter two strings and I\'ll tell you if they are anagrams: ')
-    input_str1 = input('Enter the first string: ')
-    input_str2 = input('Enter the second string: ')
+    str1 = input('Enter the first string: ')
+    str2 = input('Enter the second string: ')
 
-    if is_anagram(input_str1, input_str2):
-        print('\"{0}\" and \"{1}\" are anagrams'.format(input_str1, input_str2))
+    # process & output
+    if is_anagram(str1, str2):
+        print('\"{0}\" and \"{1}\" are anagrams'.format(str1, str2))
     else:
-        print('\"{0}\" and \"{1}\" are not anagrams'.format(input_str1, input_str2))
+        print('\"{0}\" and \"{1}\" are not anagrams'.format(str1, str2))
+
+if __name__ == '__main__':
+    main()
