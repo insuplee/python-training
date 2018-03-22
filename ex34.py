@@ -25,23 +25,31 @@ def show_employee_list():
     global EMPLOYEE_LIST
 
     print('There are {} employees: '.format(len(EMPLOYEE_LIST)))
-
     for employee in EMPLOYEE_LIST:
         print(employee)
 
 
-def delete_employee():
+def delete_employee(employee_name):
     global EMPLOYEE_LIST
 
-    name = input('Enter an employee name to remove: ')
-
-    if name in EMPLOYEE_LIST:
-        EMPLOYEE_LIST = list(filter(lambda n: n != name, EMPLOYEE_LIST))
+    if employee_name in EMPLOYEE_LIST:
+        # NOTE : EMPLOYEE_LIST.remove(employee_name) is also possible.
+        # NOTE : using remove method, you must consider error handling
+        EMPLOYEE_LIST = list(filter(lambda n: n != employee_name, EMPLOYEE_LIST))
     else:
-        print('There is no \"{}\" in the employee list. '.format(name))
+        print('There is no \"{}\" in the employee list. '.format(employee_name))
 
+
+def main():
+    show_employee_list()
+
+    # input
+    employee_name = input('Enter an employee name to remove: ')
+
+    # process
+    delete_employee(employee_name)
+
+    show_employee_list()
 
 if __name__ == '__main__':
-    show_employee_list()
-    delete_employee()
-    show_employee_list()
+    main()
