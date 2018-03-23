@@ -7,7 +7,7 @@
 
 """
 ex24.py
-애너그램 점검
+decide isAnagram
 """
 
 
@@ -39,6 +39,7 @@ def main():
         print('\"{0}\" and \"{1}\" are anagrams'.format(str1, str2))
     else:
         print('\"{0}\" and \"{1}\" are not anagrams'.format(str1, str2))
+
 
 if __name__ == '__main__':
     main()
