@@ -7,7 +7,7 @@
 
 """
 ex46.py
-count word-frequncy
+count word-frequency
 """
 
 import myutil
