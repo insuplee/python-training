@@ -7,51 +7,56 @@
 
 """
 ex52.py
-make own alarm server
+own alarm server
 """
 
-import socket
-import time
+import datetime
+from flask import Flask, render_template, redirect
 
-HOST = ''
-PORT = 10002
+
+# name of global variables are recommended to be CAPITAL.
+# 'app' in this case is exception.
+app = Flask(__name__)
+MAIN_PAGE_HTML = 'ex52_mainpage.html'
+ERROR_PAGE_HTML = 'ex52_404page.html'
+
+
+@app.route('/')
+def redirect_to_main():
+    return redirect('http://127.0.0.1:5000/main')
+
+
+# error handler has parameters
+@app.errorhandler(404)
+def error_404_page(e):
+    global ERROR_PAGE_HTML
+    return render_template(ERROR_PAGE_HTML)
+
+
+@app.route('/main')
+def main_page():
+    global MAIN_PAGE_HTML
+    return render_template(MAIN_PAGE_HTML)
+
+
+@app.route('/time')
+def time_page():
+    now_time = str(datetime.datetime.now()).split('.')[0]
+
+    # time information by json data
+    now_time_json = dict()
+    now_time_json['currentTime'] = now_time
+
+    return str(now_time_json)
 
 
 def main():
-    global HOST, PORT
-
-    print('start server... ')
-
-    # 1.소켓을 생성한다.
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-    # 2.소켓 주소 정보 할당
-    s.bind((HOST, PORT))
-    print('bind')
-
-    # 3.연결 수신 대기 상태
-    s.listen(100)
-    print('listen')
-
-    connection_list = [s]
-
-    while connection_list:
-        try:
-            # 4.연결 수락
-            client_socket, addr_info = s.accept()
-            connection_list.append(client_socket)
-            print('accept')
-
-            print('{} hello'.format(time.ctime()))
-            client_socket.send('hello')
-
-            # 소켓 종료
-            client_socket.close()
-            print('close')
-        except KeyboardInterrupt:
-            s.close()
-            return None
+    global app
+    app.run()
 
 
 if __name__ == '__main__':
     main()
+
+
+
