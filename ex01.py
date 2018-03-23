@@ -7,11 +7,11 @@
 
 """
 ex01.py
-인사하기
+greeting
 """
 
 
-def print_name(name):
+def greeting(name):
     print('Hello, {0}, nice to meet you!'.format(name))
 
 
@@ -20,7 +20,8 @@ def main():
     name = input('What is your name? ')
 
     # output
-    print_name(name)
+    greeting(name)
+
 
 if __name__ == '__main__':
     main()
