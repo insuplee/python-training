@@ -7,7 +7,7 @@
 
 """
 ex27.py
-입력 값 검증
+validate input
 """
 
 import re
@@ -82,6 +82,7 @@ def main():
 
     # process & output
     user.validate_input()
+
 
 if __name__ == '__main__':
     main()
