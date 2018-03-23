@@ -7,7 +7,7 @@
 
 """
 ex28.py
-숫자 추가
+add number
 """
 
 
@@ -38,6 +38,7 @@ def main():
 
     # output
     print('The total is {}.'.format(total))
+
 
 if __name__ == '__main__':
     main()
