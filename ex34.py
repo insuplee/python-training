@@ -7,7 +7,7 @@
 
 """
 ex34.py
-사원 명단 삭제
+delete employee list
 """
 
 
@@ -50,6 +50,7 @@ def main():
     delete_employee(employee_name)
 
     show_employee_list()
+
 
 if __name__ == '__main__':
     main()
