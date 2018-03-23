@@ -7,7 +7,7 @@
 
 """
 ex41.py
-이름 정렬
+sort namelist
 """
 
 
@@ -79,6 +79,7 @@ def main():
 
     # process & output
     read_namelist_file()
+
 
 if __name__ == '__main__':
     main()
