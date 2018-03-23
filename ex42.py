@@ -7,8 +7,10 @@
 
 """
 ex42.py
-데이터 파일 파싱
+data file parsing
 """
+
+import myutil
 
 
 FILE_NAME = 'ex42_datafile.csv'
@@ -22,34 +24,23 @@ def parsing_csv_file(file_name):
 
     parsed_list = list(map(lambda x: x.split(','), namelist))
 
-    # column_lens are used for prettier print
-    column1_len = max(list(map(lambda x: len(x[0]), parsed_list))) + 1
-    column2_len = max(list(map(lambda x: len(x[1]), parsed_list))) + 1
-    column3_len = max(list(map(lambda x: len(x[2]), parsed_list))) + 1
+    # widths are used for prettier print
+    width1 = max(list(map(lambda x: len(x[0]), parsed_list)))
+    width2 = max(list(map(lambda x: len(x[1]), parsed_list)))
+    width3 = max(list(map(lambda x: len(x[2]), parsed_list)))
 
-    # TODO : make integrated function for print, using column_lens as parameters
-    print('Last{0}First{1}Salary{2}'.format(
-        ' ' * (column1_len-len('Last')),
-        ' ' * (column2_len-len('First')),
-        ' ' * (column3_len-len('Salary'))
-    ))
-    print('-' * (column1_len + column2_len + column3_len))
-
+    # output
+    myutil.print_row(['Last', 'First', 'Salary'], [width1, width2, width3], sep=' ')
+    myutil.print_row(['-' * width1, '-' * width2, '-' * width3], [width1, width2, width3], sep='-')
     for parsed_data in parsed_list:
-        print('{0}{1}{2}{3}{4}{5}'.format(
-            parsed_data[0],
-            ' ' * (column1_len - len(parsed_data[0])),
-            parsed_data[1],
-            ' ' * (column2_len - len(parsed_data[1])),
-            parsed_data[2],
-            ' ' * (column3_len - len(parsed_data[2]))
-        ))
+        myutil.print_row([parsed_data[0], parsed_data[1], parsed_data[2]], [width1, width2, width3], sep=' ')
 
 
 def main():
     global FILE_NAME
 
     parsing_csv_file(FILE_NAME)
+
 
 if __name__ == '__main__':
     main()
