@@ -17,7 +17,7 @@ import myutil
 TARGET_URL = 'http://api.open-notify.org/astros.json'
 
 
-def get_json_and_print(target_url):
+def process_json_people_list(target_url):
     response = requests.get(url=target_url)
 
     extracted_json = response.json()
@@ -37,7 +37,7 @@ def get_json_and_print(target_url):
 
 def main():
     global TARGET_URL
-    get_json_and_print(TARGET_URL)
+    process_json_people_list(TARGET_URL)
 
 
 if __name__ == '__main__':
