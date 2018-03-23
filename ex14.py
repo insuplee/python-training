@@ -7,7 +7,7 @@
 
 """
 ex14.py
-세금 계산기
+calculate tax
 """
 
 
@@ -32,6 +32,7 @@ def main():
 
     # process & output
     calculate_tax(order_amount, state)
+
 
 if __name__ == '__main__':
     main()
