@@ -6,12 +6,13 @@
 # March 2018
 
 """
-ex52.py
+ex52_server.py
 own alarm server
 """
 
+import json
 import datetime
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, Response
 
 
 # name of global variables are recommended to be CAPITAL.
@@ -41,13 +42,15 @@ def main_page():
 
 @app.route('/time')
 def time_page():
-    now_time = str(datetime.datetime.now()).split('.')[0]
+    current_time = str(datetime.datetime.now()).split('.')[0]
 
-    # time information by json data
-    now_time_json = dict()
-    now_time_json['currentTime'] = now_time
+    time_dict = dict()
+    time_dict['currentTime'] = current_time
 
-    return str(now_time_json)
+    # convert time information dictionary to json format
+    current_time_json = json.dumps(time_dict)
+
+    return Response(current_time_json, content_type='application/json')
 
 
 def main():
