@@ -7,7 +7,7 @@
 
 """
 ex07.py
-직사각형 방의 면적
+area of square room
 """
 
 CONSTANT_FOR_FEET_TO_METER = 0.09290304
@@ -46,6 +46,7 @@ def main():
     print('The area is')
     print('{} square feet'.format(feet_area))
     print('{:.3f} square meters'.format(meters_area))
+
 
 if __name__ == '__main__':
     main()
