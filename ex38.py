@@ -7,7 +7,7 @@
 
 """
 ex38.py
-필터링 값
+filter even numbers
 """
 
 
@@ -35,6 +35,7 @@ def main():
     print('The even numbers are ', end='')
     for even_num in even_number_arr:
         print(even_num, end=' ')
+
 
 if __name__ == '__main__':
     main()
