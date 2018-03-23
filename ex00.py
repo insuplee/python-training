@@ -7,7 +7,7 @@
 
 """
 ex00.py
-문제설명
+hello world
 """
 
 
