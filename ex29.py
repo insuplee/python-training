@@ -7,9 +7,8 @@
 
 """
 ex29.py
-잘못된 입력 처리
+handle invalid input
 """
-
 
 import math
 
@@ -25,6 +24,7 @@ def main():
             print('Sorry. Rate 0 causes ZeroDivision error. ')
         except ValueError:
             print('Sorry. That\'s not a valid input. ')
+
 
 if __name__ == '__main__':
     main()
